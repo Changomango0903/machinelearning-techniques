@@ -19,3 +19,12 @@ def get_gradient_at_m(x, y, m, b):
     diff += x[i] * (y[i] - (m * x[i] + b))
   m_gradient = -2/len(x) * diff
   return m_gradient
+
+#Step gradient alters the current values of b and m by a factor of the LR (learning rate)
+#the formula is usually x = current_x - (LR * gradient_x)
+def step_gradient(x, y, b_current, m_current):
+  b_gradient = get_gradient_at_b(x, y, b_current, m_current)
+  m_gradient = get_gradient_at_m(x, y, b_current, m_current)
+  b = b_current - (0.01 * b_gradient)
+  m = m_current - (0.01 * m_gradient)
+  return (b, m)
