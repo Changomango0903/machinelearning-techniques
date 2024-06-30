@@ -12,3 +12,10 @@ def manhattan_distance(p1, p2):
         distance += abs(p1[i] - p2[i])
     return distance
 
+#calculate how many "dimensions" of each point are different
+def hamming_distance(p1, p2):
+    distance = 0
+    for i in range(len(p1)):
+        if p1[i] != p2[i]:
+            distance += 1
+    return distance
