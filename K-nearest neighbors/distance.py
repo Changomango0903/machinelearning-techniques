@@ -1,3 +1,5 @@
+from scipy.spatial import distance
+
 #calculate direct line from p1 to p2 (hypotenuse of triangle formed)
 def euclidian_distance(p1, p2):
     distance = 0
@@ -19,3 +21,7 @@ def hamming_distance(p1, p2):
         if p1[i] != p2[i]:
             distance += 1
     return distance
+
+distance.euclidean([1, 2], [4, 0])
+distance.cityblock([1, 2], [4, 0])
+distance.hamming([5, 4, 9], [1, 7, 9])
